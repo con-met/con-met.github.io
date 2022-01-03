@@ -16,7 +16,7 @@ module.exports = {
     {
       resolve: "gatsby-plugin-manifest",
       options: {
-        icon: "src/images/icon.png",
+        icon: "src/assets/images/favicon.png",
       },
     },
     "gatsby-plugin-mdx",
@@ -25,19 +25,36 @@ module.exports = {
     {
       resolve: "gatsby-source-filesystem",
       options: {
-        name: "images",
-        path: "./src/images/",
+        name: "assets",
+        path: "src/assets/",
       },
-      __key: "images",
+      __key: "assets",
     },
     {
       resolve: "gatsby-source-filesystem",
       options: {
         name: "pages",
-        path: "./src/pages/",
+        path: "src/pages/",
       },
       __key: "pages",
     },
     "gatsby-transformer-remark",
+    {
+      resolve: "gatsby-source-stripe",
+      options: {
+        objects: [
+          "Balance",
+          "BalanceTransaction",
+          "Product",
+          "ApplicationFee",
+          "Sku",
+          "Subscription",
+        ],
+        secretKey:
+          process.env.SECRET_KEY ||
+          "sk_test_uwjwkeJRD3i4DJBaSufnmyEj00qRWtVIhp",
+        downloadFiles: true,
+      },
+    },
   ],
 };

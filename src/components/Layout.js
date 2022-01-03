@@ -1,45 +1,15 @@
 import React from "react";
-import { Link } from "gatsby";
+import Header from "./Header";
+import Footer from "./Footer";
 
 const Layout = ({ children }) => {
-  const linkStyle = `
-     Hover:opacity-70
-     text-sm
-     sm:text-lg
-    `;
-  const logoStyle = `
-    text-white 
-    font-rammetto
-    sm:text-base
-    text-sm
-    `;
   return (
     <div>
-      <nav className="flex sm:justify-between justify-around items-center bg-green-900 lg:px-20 sm:px-6 py-8 text-gray-100">
-        <h3 className={logoStyle}>ConMet</h3>
-        <ul className="flex">
-          <li className={linkStyle}>
-            <Link to="/">Home</Link>
-          </li>
-          <li className={linkStyle}>
-            <Link to="/services">Servizi</Link>
-          </li>
-          <li className={linkStyle}>
-            <Link to="/pricing">Prezzi</Link>
-          </li>
-          <li className={linkStyle}>
-            <Link to="/payments">Pagamenti</Link>
-          </li>
-        </ul>
-      </nav>
+      <Header hero={false}></Header>
 
       <main>{children}</main>
 
-      <footer className="text-center py-8 bg-green-900 text-gray-100">
-        <p>
-          Copyright 2030 <span className={logoStyle}>HealthRoom</span>
-        </p>
-      </footer>
+      <Footer></Footer>
     </div>
   );
 };

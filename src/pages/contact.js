@@ -5,6 +5,7 @@ import ContactPage from "../components/ContactPage";
 const Contact = () => {
   return (
     <Layout>
+      This is the real contact page
       <ContactPage />
     </Layout>
   );

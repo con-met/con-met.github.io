@@ -31,25 +31,24 @@ const createPagesFromWP = async ({ graphql, actions }) => {
 };
 
 const createPagesFromMarkDown = async ({ graphql, actions }) => {
-  const { data } = await graphql(`
-    query AllArticles {
-      allMarkdownRemark {
-        nodes {
-          frontmatter {
-            slug
-          }
-        }
-      }
-    }
-  `);
-
-  data.allMarkdownRemark.nodes.forEach((item) => {
-    actions.createPage({
-      path: item.frontmatter.slug,
-      component: path.resolve(`src/templates/article.js`),
-      context: { slug: item.frontmatter.slug },
-    });
-  });
+  // const { data } = await graphql(`
+  //   query AllArticles {
+  //     allMarkdownRemark {
+  //       nodes {
+  //         frontmatter {
+  //           slug
+  //         }
+  //       }
+  //     }
+  //   }
+  // `);
+  // data.allMarkdownRemark.nodes.forEach((item) => {
+  //   actions.createPage({
+  //     path: item.frontmatter.slug,
+  //     component: path.resolve(`src/templates/article.js`),
+  //     context: { slug: item.frontmatter.slug },
+  //   });
+  // });
 };
 
 exports.createPages = async ({ graphql, actions }) => {
