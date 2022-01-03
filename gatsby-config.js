@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    siteUrl: "https://www.yourdomain.tld",
+    siteUrl: "https://www.conmet.it",
     title: "Connessioni Metropolitane",
   },
   plugins: [
@@ -11,12 +11,6 @@ module.exports = {
       },
     },
     "gatsby-plugin-postcss",
-    {
-      resolve: "gatsby-plugin-google-analytics",
-      options: {
-        trackingId: "123",
-      },
-    },
     "gatsby-plugin-image",
     "gatsby-plugin-sitemap",
     {
@@ -44,5 +38,6 @@ module.exports = {
       },
       __key: "pages",
     },
+    "gatsby-transformer-remark",
   ],
 };
