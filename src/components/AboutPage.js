@@ -3,7 +3,7 @@ import React from "react";
 const AboutPage = () => {
   return (
     <div className="text-center py-24 w-4/5 mx-auto">
-      <h3 className="font-rammetto text-2xl pb-4">
+      <h3 className="text-2xl pb-4">
         HealthRoom has always been about the readers
       </h3>
       <p>

@@ -1,12 +1,13 @@
 import React from "react";
-import Layout from "../components/Layout";
-import ContactPage from "../components/ContactPage";
+import Layout from "../components/layout";
+import ContactPage from "../components/contact-page";
 
 const Contact = () => {
   return (
     <Layout>
-      This is the real contact page
-      <ContactPage />
+      <section id="contact">
+        <ContactPage />
+      </section>
     </Layout>
   );
 };

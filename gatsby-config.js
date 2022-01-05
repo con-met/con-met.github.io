@@ -1,3 +1,5 @@
+require("dotenv").config();
+
 module.exports = {
   siteMetadata: {
     siteUrl: "https://www.conmet.it",
@@ -19,7 +21,7 @@ module.exports = {
         icon: "src/assets/images/favicon.png",
       },
     },
-    "gatsby-plugin-mdx",
+    // "gatsby-plugin-mdx",
     "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",
     {
@@ -38,7 +40,13 @@ module.exports = {
       },
       __key: "pages",
     },
-    "gatsby-transformer-remark",
+    "gatsby-transformer-json",
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `./src/data/`,
+      },
+    },
     {
       resolve: "gatsby-source-stripe",
       options: {
@@ -50,11 +58,10 @@ module.exports = {
           "Sku",
           "Subscription",
         ],
-        secretKey:
-          process.env.SECRET_KEY ||
-          "sk_test_uwjwkeJRD3i4DJBaSufnmyEj00qRWtVIhp",
-        downloadFiles: true,
+        secretKey: process.env.STRIPE_PRIVATE_KEY,
+        downloadFiles: false,
       },
     },
+    "gatsby-plugin-gdpr-cookies",
   ],
 };

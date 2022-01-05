@@ -1,11 +1,9 @@
 import React from "react";
 import Logo from "../assets/images/logo.svg";
-import Hero from "./Hero";
-import SocialList from "./SocialList";
+import Hero from "./hero";
+import SocialList from "./social-list";
 
-const Header = (props) => {
-  const hero = props?.hero ?? true;
-
+const Header = ({ hero = true }) => {
   return (
     <header className="header-area">
       <div className="navigation">
@@ -16,9 +14,7 @@ const Header = (props) => {
                 <a className="mr-4 navbar-brand" href="/">
                   <img src={Logo} alt="Logo" />
                 </a>
-                <h1>
-                  HERO {hero} {typeof hero} {JSON.stringify(props)}
-                </h1>
+
                 <button
                   className="block navbar-toggler focus:outline-none md:hidden"
                   type="button"

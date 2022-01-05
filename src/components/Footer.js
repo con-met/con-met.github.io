@@ -1,5 +1,5 @@
 import React from "react";
-import SocialList from "./SocialList";
+import SocialList from "./social-list";
 import LogoImage from "../assets/images/logo.svg";
 
 const Footer = () => {
@@ -27,13 +27,13 @@ const Footer = () => {
                   <h6 className="footer-title">Con Met</h6>
                   <ul>
                     <li>
-                      <a href="/about">Chi siamo</a>
+                      <a href="#">Chi siamo</a>
                     </li>
                     <li>
-                      <a href="/contact">Contatti</a>
+                      <a href="#">Contatti</a>
                     </li>
                     <li>
-                      <a href="/career">Offerte di lavoro</a>
+                      <a href="#">Offerte di lavoro</a>
                     </li>
                   </ul>
                 </div>
@@ -43,13 +43,13 @@ const Footer = () => {
                   <h6 className="footer-title">Prodotti &amp; Servizi</h6>
                   <ul>
                     <li>
-                      <a href="/products">Prodotti</a>
+                      <a href="#">Prodotti</a>
                     </li>
                     <li>
-                      <a href="/business">Aziende</a>
+                      <a href="#">Aziende</a>
                     </li>
                     <li>
-                      <a href="/services">Servizi</a>
+                      <a href="#">Servizi</a>
                     </li>
                   </ul>
                 </div>
@@ -62,10 +62,10 @@ const Footer = () => {
                       <a href="https://www.aiutoveloce.it/">Aiuto</a>
                     </li>
                     <li>
-                      <a href="/faq">FAQ</a>
+                      <a href="#">FAQ</a>
                     </li>
                     <li>
-                      <a href="/terms-and-conditions">Termini e condizioni</a>
+                      <a href="#">Termini e condizioni</a>
                     </li>
                   </ul>
                 </div>

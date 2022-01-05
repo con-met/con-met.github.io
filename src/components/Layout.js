@@ -1,14 +1,12 @@
 import React from "react";
-import Header from "./Header";
-import Footer from "./Footer";
+import Header from "./header";
+import Footer from "./footer";
 
-const Layout = ({ children }) => {
+const Layout = ({ hero = true, children }) => {
   return (
     <div>
-      <Header hero={false}></Header>
-
+      <Header hero={true}></Header>
       <main>{children}</main>
-
       <Footer></Footer>
     </div>
   );

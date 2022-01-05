@@ -1,9 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import servicesImage from "../assets/images/services.png";
-import PaymentElement from "@stripe/react-stripe-js";
+import { PaymentElement } from "@stripe/react-stripe-js";
+import { loadStripe, useStripe, useElements } from "@stripe/react-stripe-js";
 
 const PaymentPage = () => {
-  const importo = 1;
+  const stripe = useStripe();
+  const elements = useElements();
+  const [message, setMessage] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
+  const amount = 1;
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+  };
 
   return (
     <section id="service" className="relative services-area py-120">
@@ -31,6 +40,21 @@ const PaymentPage = () => {
                     <p className="text">
                       Short description for the ones who look for something new.
                     </p>
+                    <form id="payment-form" onSubmit={handleSubmit}>
+                      <PaymentElement id="card-element"></PaymentElement>
+                      <button
+                        disabled={isLoading || !stripe || !elements}
+                        id="submit"
+                      >
+                        <span id="button-text">
+                          {isLoading ? (
+                            <div className="spinner" id="spinner"></div>
+                          ) : (
+                            "Pay {amount} &euro;"
+                          )}
+                        </span>
+                      </button>
+                    </form>
                   </div>
                 </div>
               </div>

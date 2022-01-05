@@ -1,50 +1,27 @@
-// import React from "react";
-// import Layout from "../components/Layout";
-// import Header from "../components/Header";
-// import Blog from "../components/blog";
-
-// const Home = () => {
-//   return (
-//     <Layout>
-//       <Header />
-//       <Blog />
-//     </Layout>
-//   );
-// };
-
-// export default Home;
-
 import React from "react";
-import { Link, graphql } from "gatsby"; //highlight-line
-import Layout from "../components/layout";
 
-export default function Home({ data }) {
+import ServiceSection from "../components/service-section";
+import PricingSection from "../components/pricing-section";
+import CallToActionSection from "../components/call-to-action-section";
+import TestimonialSection from "../components/testimonial-section";
+import ClientLogoSection from "../components/client-logo-section";
+import ContactSection from "../components/contact-section";
+import Header from "../components/header";
+import Footer from "../components/footer";
+
+export default function Home() {
   return (
-    <Layout>
-      <h1>My WordPress Blog</h1>
-      <h4>Posts</h4>
-      {data.allWpPost.nodes.map((node) => (
-        <div key={node.slug}>
-          {/* highlight-start */}
-          <Link to={node.slug}>
-            <p>{node.title}</p>
-          </Link>
-          {/* highlight-end */}
-          <div dangerouslySetInnerHTML={{ __html: node.excerpt }} />
-        </div>
-      ))}
-    </Layout>
+    <>
+      <Header hero={true}></Header>
+      <main>
+        <ServiceSection></ServiceSection>
+        <PricingSection></PricingSection>
+        <CallToActionSection></CallToActionSection>
+        <TestimonialSection></TestimonialSection>
+        <ClientLogoSection></ClientLogoSection>
+        <ContactSection></ContactSection>
+      </main>
+      <Footer></Footer>
+    </>
   );
 }
-
-export const pageQuery = graphql`
-  query {
-    allWpPost(sort: { fields: [date] }) {
-      nodes {
-        title
-        excerpt
-        slug
-      }
-    }
-  }
-`;
